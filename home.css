@@ -1,0 +1,988 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url('Fonts/Poppins-Light.ttf');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('Fonts/Poppins-Light.ttf');
+}
+
+/*NAV STYLE BEGINS*/
+
+
+nav{
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    z-index: 999;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+.nav_links{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+}
+.home, .others{
+    text-decoration: none;
+    margin-right: 25px;
+    display: inline-block;
+}
+.others a{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 17px;
+    color: black;
+}
+.others a:hover{
+    background-color: #f7931e;
+    color: white;
+    transition: all ease-in-out 0.5s;
+}
+.home a{
+    background-color: #f7931e;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    border-radius: 17px;
+    color: white;
+    text-decoration: none;
+    color: white;
+}
+.others a{
+  color: black;
+  text-decoration: none;
+}
+.logo{
+    width: 3em;
+    height: 3em;
+    margin-left: 3%;
+}
+
+/*Responsive design*/
+
+.Menu-icon{
+    font-size: 40px;
+    color: #f7931e;  
+    display: none;
+    margin-right: 6%;
+    margin-top: 2%;
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 50%;
+    background-color: #efefef00;
+    cursor: pointer;
+  }
+    .dropdown_menu{
+      position: absolute;
+      top: 60px;
+      width: 95%;
+      background-color: #f7931e;
+      overflow: hidden;
+      display: none;
+      height: 0;
+      transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 1;
+      margin-left: 2%;
+      margin-right: 2%;
+      border-radius: 5px;
+    }
+    .dropdown_menu li{
+      padding-top: 8%;
+      display: flex;
+      justify-content: center;
+    }
+    .dropdown_menu li a{
+      text-decoration: none;
+      list-style: none;
+      color: white;
+      align-items: center;
+    }
+    .dropdown_menu.open{
+      height: 297px;
+      width: 95%;
+      margin-right: 2%;
+      margin-left: 2.5%;
+    }
+
+    
+    @media(max-width:965px){
+      nav ul li a{
+        display: none;
+      }
+      .Menu-icon{
+        display: block;
+      }
+      .dropdown_menu{
+        display: block;
+      }
+      .dropdown_menu li a:hover{
+        color: #f7931e;
+      }
+      .dropdown_menu.open{
+        height: 600px;
+        width: 95%;
+        margin-right: 2%;
+        margin-left: 2.5%;
+      }
+      .logo{
+        margin-top: 5%;
+      }
+  }
+
+  @media(max-width:500px){
+    .dropdown_menu.open{
+      height: 400px;
+      width: 95%;
+      margin-right: 2%;
+      margin-left: 2.5%;
+    }
+    .logo{
+        margin-top: 7%;
+      }
+  }
+
+
+
+/*NAV STYLE ENDS*/
+
+
+
+
+
+/*ABOUT ME STYLE STARTS*/
+
+
+#about{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    padding-top: 7%;
+  }
+  .about-row{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-img{
+    width: 25em;
+    height: 25em;
+    object-fit: cover;
+    margin-left: 3%;
+    transform: translateX(60px);
+    opacity: 0;
+    transition: 1s ease;
+  }
+  .about-img--visible{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .about-text{
+    width: 50em;
+    font-size: 13px;
+    margin-bottom: 3%;
+    transform: translateX(-60px);
+    opacity: 0;
+    transition: 1s ease;
+  }
+  .about-text--visible{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .about-btn{
+    background-color: #f7931e;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media(max-width:1030px){
+    .about-img{
+      margin-left: 1%;
+    }
+    .about-text{
+      width: 40em;
+    }
+  }
+  @media(max-width:950px){
+    .about-text{
+      width: 30em;
+    }
+    .about-img{
+      width: 22em;
+      height: 22em;
+    }
+    #about{
+        padding-top: 10%;
+    }
+  }
+  @media(max-width:800px){
+    .about-text{
+      font-size: 11px;
+      margin-left: 1%;
+    }
+    .about-header{
+      font-size: 20px;
+    }
+    .about-img{
+      width: 18em;
+      height: 18em;
+    }
+    #about{
+        padding-top: 15%;
+    }
+  }
+  @media(max-width:650px){
+    .about-text{
+      font-size: 8.5px;
+      margin-left: 1%;
+    }
+    .banner-img{
+      width: 15em;
+      height: 15em;
+    }
+  }
+  @media(max-width:550px){
+    .about-row{
+      display: flex;
+      flex-direction: column;
+    }
+    .about-img{
+      margin-top: 3%;
+      width: 15em;
+      height: 15em;
+    }
+    .about-text{
+      font-size: 10px;
+    }
+    #about{
+        padding-top: 23%;
+    }
+  }
+  
+  
+  
+  /*ABOUT ME STYLE ENDS*/
+
+
+
+  #signup{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    margin-top: 5%;
+  }
+  .signup-row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+  .signup-img{
+    width: 25em;
+    height: 25em;
+    object-fit: cover;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 1s ease;
+  }
+  .signup-img--visible{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .signup-disc{
+    margin-left: 3%;
+  }
+  .signup-text{
+    width: 50em;
+    font-size: 13px;
+    margin-bottom: 3%;
+
+  }
+  .signup-btn{
+    background-color: #f7931e;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media(max-width:1030px){
+    .signup-img{
+      margin-left: 1%;
+    }
+    .signup-text{
+      width: 40em;
+    }
+  }
+  @media(max-width:950px){
+    .signup-text{
+      width: 30em;
+    }
+    .signup-img{
+      width: 22em;
+      height: 22em;
+    }
+  }
+  @media(max-width:800px){
+    .signup-text{
+      font-size: 11px;
+      margin-left: 1%;
+    }
+    .signup-header{
+      font-size: 20px;
+    }
+    .signup-img{
+      width: 18em;
+      height: 18em;
+    }
+  }
+  @media(max-width:650px){
+    .signup-text{
+      font-size: 8.5px;
+      margin-left: 1%;
+    }
+    .signup-img{
+      width: 15em;
+      height: 15em;
+    }
+  }
+  @media(max-width:550px){
+    .signup-row{
+      display: flex;
+      flex-direction: column;
+    }
+    .signup-img{
+      margin-top: 3%;
+      width: 15em;
+      height: 15em;
+    }
+    .signup-text{
+      font-size: 10px;
+    }
+  }
+  
+  
+  
+  /*ABOUT ME STYLE ENDS*/
+
+
+   /*ABOUT ME STYLE ENDS*/
+
+
+
+   #signup{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    margin-top: 5%;
+  }
+  .eucharist-row{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+  .signup-img{
+    width: 25em;
+    height: 25em;
+    object-fit: cover;
+  }
+  .signup-disc{
+    margin-left: 3%;
+  }
+  .signup-text{
+    width: 50em;
+    font-size: 13px;
+    margin-bottom: 3%;
+  }
+  .signup-btn{
+    background-color: #f7931e;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media(max-width:1030px){
+    .signup-img{
+      margin-left: 1%;
+    }
+    .signup-text{
+      width: 40em;
+    }
+  }
+  @media(max-width:950px){
+    .signup-text{
+      width: 30em;
+    }
+    .signup-img{
+      width: 22em;
+      height: 22em;
+    }
+  }
+  @media(max-width:800px){
+    .signup-text{
+      font-size: 11px;
+      margin-left: 1%;
+    }
+    .signup-header{
+      font-size: 20px;
+    }
+    .signup-img{
+      width: 18em;
+      height: 18em;
+    }
+  }
+  @media(max-width:650px){
+    .signup-text{
+      font-size: 8.5px;
+      margin-left: 1%;
+    }
+    .signup-img{
+      width: 15em;
+      height: 15em;
+    }
+  }
+  @media(max-width:550px){
+    .eucharist-row{
+      display: flex;
+      flex-direction: column;
+    }
+    .signup-img{
+      margin-top: 3%;
+      width: 15em;
+      height: 15em;
+    }
+    .signup-text{
+      font-size: 10px;
+    }
+  }
+  
+  
+  
+  /*ABOUT ME STYLE ENDS*/
+  
+
+
+
+    /*ABOUT ME STYLE ENDS*/
+
+
+
+    #signup{
+      width: 100%;
+      height: fit-content;
+      position: relative;
+      margin-top: 5%;
+    }
+    .bible-row{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+    }
+    .signup-img{
+      width: 25em;
+      height: 25em;
+      object-fit: cover;
+    }
+    .signup-disc{
+      margin-left: 3%;
+    }
+    .signup-text{
+      width: 50em;
+      font-size: 13px;
+      margin-bottom: 3%;
+    }
+    .signup-btn{
+      background-color: #f7931e;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 1.5%;
+      padding-bottom: 1.5%;
+      border-radius: 20px;
+      color: white;
+      text-decoration: none;
+    }
+    
+    @media(max-width:1030px){
+      .signup-img{
+        margin-left: 1%;
+      }
+      .signup-text{
+        width: 40em;
+      }
+    }
+    @media(max-width:950px){
+      .signup-text{
+        width: 30em;
+      }
+      .signup-img{
+        width: 22em;
+        height: 22em;
+      }
+    }
+    @media(max-width:800px){
+      .signup-text{
+        font-size: 11px;
+        margin-left: 1%;
+      }
+      .signup-header{
+        font-size: 20px;
+      }
+      .signup-img{
+        width: 18em;
+        height: 18em;
+      }
+    }
+    @media(max-width:650px){
+      .signup-text{
+        font-size: 8.5px;
+        margin-left: 1%;
+      }
+      .signup-img{
+        width: 15em;
+        height: 15em;
+      }
+    }
+    @media(max-width:550px){
+      .bible-row{
+        display: flex;
+        flex-direction: column;
+      }
+      .signup-img{
+        margin-top: 3%;
+        width: 15em;
+        height: 15em;
+      }
+      .signup-text{
+        font-size: 10px;
+      }
+    }
+    
+    
+    
+    /*ABOUT ME STYLE ENDS*/
+
+
+
+
+     /*ABOUT ME STYLE ENDS*/
+
+
+
+     #signup{
+      width: 100%;
+      height: fit-content;
+      position: relative;
+      margin-top: 5%;
+    }
+    .daily-row{
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100%;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+    }
+    .signup-img{
+      width: 25em;
+      height: 25em;
+      object-fit: cover;
+    }
+    .signup-disc{
+      margin-left: 3%;
+    }
+    .signup-text{
+      width: 50em;
+      font-size: 13px;
+      margin-bottom: 3%;
+    }
+    .signup-btn{
+      background-color: #f7931e;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 1.5%;
+      padding-bottom: 1.5%;
+      border-radius: 20px;
+      color: white;
+      text-decoration: none;
+    }
+    
+    @media(max-width:1030px){
+      .signup-img{
+        margin-left: 1%;
+      }
+      .signup-text{
+        width: 40em;
+      }
+    }
+    @media(max-width:950px){
+      .signup-text{
+        width: 30em;
+      }
+      .signup-img{
+        width: 22em;
+        height: 22em;
+      }
+    }
+    @media(max-width:800px){
+      .signup-text{
+        font-size: 11px;
+        margin-left: 1%;
+      }
+      .signup-header{
+        font-size: 20px;
+      }
+      .signup-img{
+        width: 18em;
+        height: 18em;
+      }
+    }
+    @media(max-width:650px){
+      .signup-text{
+        font-size: 8.5px;
+        margin-left: 1%;
+      }
+      .signup-img{
+        width: 15em;
+        height: 15em;
+      }
+    }
+    @media(max-width:550px){
+      .daily-row{
+        display: flex;
+        flex-direction: column;
+      }
+      .signup-img{
+        margin-top: 3%;
+        width: 15em;
+        height: 15em;
+      }
+      .signup-text{
+        font-size: 10px;
+      }
+    }
+    
+    
+    
+    /*ABOUT ME STYLE ENDS*/
+
+
+
+
+    /*ABOUT ME STYLE ENDS*/
+
+
+
+    #signup{
+      width: 100%;
+      height: fit-content;
+      position: relative;
+      margin-top: 5%;
+    }
+    .prayers-row{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+    }
+    .signup-img{
+      width: 25em;
+      height: 25em;
+      object-fit: cover;
+    }
+    .signup-disc{
+      margin-left: 3%;
+    }
+    .signup-text{
+      width: 50em;
+      font-size: 13px;
+      margin-bottom: 3%;
+    }
+    .signup-btn{
+      background-color: #f7931e;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 1.5%;
+      padding-bottom: 1.5%;
+      border-radius: 20px;
+      color: white;
+      text-decoration: none;
+    }
+    
+    @media(max-width:1030px){
+      .signup-img{
+        margin-left: 1%;
+      }
+      .signup-text{
+        width: 40em;
+      }
+    }
+    @media(max-width:950px){
+      .signup-text{
+        width: 30em;
+      }
+      .signup-img{
+        width: 22em;
+        height: 22em;
+      }
+    }
+    @media(max-width:800px){
+      .signup-text{
+        font-size: 11px;
+        margin-left: 1%;
+      }
+      .signup-header{
+        font-size: 20px;
+      }
+      .signup-img{
+        width: 18em;
+        height: 18em;
+      }
+    }
+    @media(max-width:650px){
+      .signup-text{
+        font-size: 8.5px;
+        margin-left: 1%;
+      }
+      .signup-img{
+        width: 15em;
+        height: 15em;
+      }
+    }
+    @media(max-width:550px){
+      .prayers-row{
+        display: flex;
+        flex-direction: column;
+      }
+      .signup-img{
+        margin-top: 3%;
+        width: 15em;
+        height: 15em;
+      }
+      .signup-text{
+        font-size: 10px;
+      }
+    }
+    
+    
+    
+    /*ABOUT ME STYLE ENDS*/
+  
+  
+ /*ABOUT ME STYLE ENDS*/
+
+
+
+ #signup{
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  margin-top: 5%;
+}
+.word-row{
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+.signup-img{
+  width: 25em;
+  height: 25em;
+  object-fit: cover;
+}
+.signup-disc{
+  margin-left: 3%;
+}
+.signup-text{
+  width: 50em;
+  font-size: 13px;
+  margin-bottom: 3%;
+}
+.signup-btn{
+  background-color: #f7931e;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+@media(max-width:1030px){
+  .signup-img{
+    margin-left: 1%;
+  }
+  .signup-text{
+    width: 40em;
+  }
+}
+@media(max-width:950px){
+  .signup-text{
+    width: 30em;
+  }
+  .signup-img{
+    width: 22em;
+    height: 22em;
+  }
+}
+@media(max-width:800px){
+  .signup-text{
+    font-size: 11px;
+    margin-left: 1%;
+  }
+  .signup-header{
+    font-size: 20px;
+  }
+  .signup-img{
+    width: 18em;
+    height: 18em;
+  }
+}
+@media(max-width:650px){
+  .signup-text{
+    font-size: 8.5px;
+    margin-left: 1%;
+  }
+  .signup-img{
+    width: 15em;
+    height: 15em;
+  }
+}
+@media(max-width:550px){
+  .word-row{
+    display: flex;
+    flex-direction: column;
+  }
+  .signup-img{
+    margin-top: 3%;
+    width: 15em;
+    height: 15em;
+  }
+  .signup-text{
+    font-size: 10px;
+  }
+}
+
+
+
+/*ABOUT ME STYLE ENDS*/
+
+
+
+
+
+
+
+/*contact style starts*/
+
+
+
+
+#links{
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  background-color: white;
+  padding-top: 3%;
+  margin-top: 3%;
+}
+.About-subj{
+  text-align: center;
+}
+.About-change{
+  color: #f7931e;
+}
+.link-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2%;
+}
+.link1{
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+  color: #f7931e;
+  font-size: 40px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.link-disc{
+  font-size: 10px;
+  color: black;
+}
+.link-disc a{
+  text-decoration: none;
+  color: black;
+}
+
+@media(max-width:950px){
+  #links{
+    height: 200px;
+  }
+}
+@media(max-width: 1025px){
+  #links{
+    height: 300px;
+  }
+}
+@media(max-width:450px){
+  .link-box{
+    margin-top: 10%;
+  }
+}
+
+
+
+/*contact style ends*/
+
+
